@@ -13,8 +13,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   backend:
-    build:
-      context: ./backend
+    image: mandar0333/crm-backend:latest
     container_name: crm-backend
     depends_on:
       - postgres
@@ -27,8 +26,7 @@ services:
       PORT: 5000
 
   frontend:
-    build:
-      context: ./frontend
+    image: mandar0333/crm-frontend:latest
     container_name: crm-frontend
     depends_on:
       - backend
