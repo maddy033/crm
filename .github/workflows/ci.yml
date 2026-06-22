@@ -19,6 +19,11 @@ jobs:
             # install npm packages
             - name : Install npm packages
               run: npm ci
+              working-directory: frontend
+            # Run liter
+            - name : Run Linter
+              run: npm run lint
+              working-directory: frontend
 
               
               
