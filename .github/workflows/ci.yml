@@ -8,10 +8,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Code
-              uses: actions/checkout@v7
+              uses: actions/checkout@v4
             #setup node js for linter 
             - name:  Setup NodeJs
-              uses: actions/setup-node@v6
+              uses: actions/setup-node@v4
               with:
                 node-version: '20'
                 cache: npm
@@ -26,7 +26,7 @@ jobs:
               working-directory: frontend
 
             - name: Docker Setup [Login]
-              uses: docker/login-action@v4
+              uses: docker/login-action@v7
               with:
                 username: ${{ vars.DOCKERHUB_USERNAME }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
